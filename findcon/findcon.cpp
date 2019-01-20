@@ -8,7 +8,7 @@ using namespace cv;
 
 int main(int argc, char* argv[])
 {
-		Mat origin = imread("sysu.jpeg");
+		Mat origin = imread("666.jpg");
 		Mat gray, bin, binori;
 
 		cvtColor(origin, gray, CV_RGB2GRAY);
@@ -23,9 +23,13 @@ int main(int argc, char* argv[])
 		bin = Scalar::all(0);
 		drawContours(bin, contours, -1, Scalar(255, 255, 255));
 	
-		imwrite("original.jpeg", origin);
-		imwrite("binary_original.jpeg", binori);
-		imwrite("contours.jpeg", bin);
+//		imwrite("original.jpeg", origin);
+//		imwrite("binary_original.jpeg", binori);
+//		imwrite("contours.jpeg", bin);
+
+		imshow("original.jpeg", origin);
+		imshow("binary_original.jpeg", binori);
+		imshow("contours.jpeg", bin);
 
 		waitKey(0);
 		return 0;
