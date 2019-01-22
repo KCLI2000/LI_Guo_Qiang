@@ -30,9 +30,10 @@ int main(int argc, char* argv[])
 				cerr << "NO IMAGE LOADED" << endl;
 				return -1;
 		}
-
+		
+		medianBlur(src, src, 3);
 		cvtColor(src, gray, CV_BGR2GRAY);
-	
+			
 		namedWindow("Source image", CV_WINDOW_AUTOSIZE);
 		createTrackbar("Threshold:", "Source image", &thresh, maxt, cornerHarris_demo);
 
@@ -67,7 +68,7 @@ void cornerHarris_demo(int, void*)
 						}
 				}
 		}
-		namedWindow("Corners detected", WINDOW_AUTOSIZE);
+		namedWindow("Corners detected", WINDOW_NORMAL);
 		imshow("Corners detected", scaled);
 
 		return;
