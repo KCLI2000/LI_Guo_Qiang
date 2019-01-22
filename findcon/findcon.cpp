@@ -6,15 +6,32 @@
 using namespace std;
 using namespace cv;
 
+
+/*void on_trackbar(int pos, void *data)
+{
+		Mat origin = *(Mat*)(data);
+
+		threshold(origin, bin, pos, 255, 0);
+		imshow("threshold", bin);
+}
+*/
+
 int main(int argc, char* argv[])
 {
-		Mat origin = imread("666.jpg");
-		Mat gray, bin, binori;
+		Mat origin = imread(argv[1],1);
 
+		if(argc != 2 || origin.empty())
+		{
+				cerr << "LOAD IMAGE FAILED" << endl;
+				return -1;
+		}
+
+		Mat gray, bin, binori;
 		cvtColor(origin, gray, CV_RGB2GRAY);
+		namedWindow("threshold");
+		imshow("threshold", gray);
+
 		threshold(gray, bin, 120, 255, CV_THRESH_BINARY);
-		
-		bin.copyTo(binori);
 
 		vector<vector<Point>> contours;
 		vector<Vec4i>hierarchy;
