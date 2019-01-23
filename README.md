@@ -10,7 +10,16 @@
 - filter: 4ways to filter a image with noise
 - findcon: example of using function: findcontours() and drawcontours()
 - trackbar: example of using createTrackbar()
+- Hough: Hough Line programme
+- PerspectiveTransfomation: Perspective Transformation. To be learned...
+- SVM: Support Vector Machine programme. To be learned...
 ---
 - try: unorganized files
 ---
+##Version info
+- **v1.0.0**: Done from 18/1/2019-23/1/2019 
+-		      Basic tutorial based programme
+---
+##Any advice is heartly gratified.
+
 
