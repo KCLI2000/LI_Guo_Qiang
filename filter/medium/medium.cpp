@@ -6,9 +6,9 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char **argv[])
+int main(int argc, char *argv[])
 {
-		Mat origin = imread("salted.jpeg");
+		Mat origin = imread("affine.jpg");
 		if(origin.empty())
 		{
 				cout << "LOAD IMAGE FAILURE" << endl;
@@ -17,7 +17,7 @@ int main(int argc, char **argv[])
 
 		Mat medium;
 		//origin.copyTo(medium);
-		medianBlur(origin, medium, 3);
+		medianBlur(origin, medium, 7);
 		imshow("medium", medium);
 		imwrite("median.jpeg", medium);
 		waitKey(0);
